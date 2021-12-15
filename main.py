@@ -1,10 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# ## Crawl the emotion from comments and show it to wordcloud
-
-# In[1]:
-
 # 필요한 라이브러리 불러오기
 from konlpy.tag import Okt
 okt = Okt()
@@ -18,6 +11,8 @@ import re
 
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
+
+from PIL import Image
 
 
 # 드라이버 경로 정의해주기
@@ -179,13 +174,11 @@ def show_wordcloud(emo_words):
     plt.figure(figsize=(20, 20))  # 이미지 사이즈 지정
     plt.imshow(wordcloud, interpolation='lanczos')  # 이미지의 부드럽기 정도
     plt.axis('off')  # x, y 축 숫자 제거
-    return plt.show()
-
+    image = plt.savefig('/Users/lifeofpy/opt/anaconda3/envs/Crawling/WebProject/static/img/wordcloud.png')
+    return image
 
 
 # 지금까지 만든 함수 실행 부분
-# 1. 웹 사이트 링크 입력 받기
-emotional_words = extract_emo_words(input())
-
-# 2. 워드클라우드 시각화하기
-show_wordcloud(emotional_words)
+def this_is_main(music_link):
+    emotional_words = extract_emo_words(music_link)
+    show_wordcloud(emotional_words) # 이 이미지를 특정 폴더에 저장. 그리고 그 폴더에 있는 이미지를 html 에 보여준다
