@@ -5,5 +5,5 @@
 
 
 ### 사용 언어
-- Python & Flask
-- HTML, CSS, JavaScript
+- Back: Python & Flask
+- Front: HTML, CSS, JavaScript
