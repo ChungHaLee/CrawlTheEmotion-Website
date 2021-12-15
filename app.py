@@ -15,8 +15,8 @@ def index():
     return render_template("index.html") # 초기 페이지를 보여준다
 
 
-@app.route('/make_wordcloud') # 새로운 페이지로 이동까지는 됨 (라우팅 부분을 HTML 에 연결해줘야함)
-def make_wordcloud():
+@app.route('/show_wordcloud') # 새로운 페이지로 이동까지는 됨 (라우팅 부분을 HTML 에 연결해줘야함)
+def show_wordcloud():
     if request.method == 'GET':
         music_link = request.args.get('link', type = str) # GET 방식은 reqeust.args.get 이 맞는데,
         cloud = python_program.this_is_main(music_link) # 안 고쳐지는 url must be a string 에러... (music_link 가 Nonetype 으로 잘못 잡힌듯)
