@@ -126,12 +126,11 @@ def show_emotion_with_text(text):
 
 
 # 예시로 데이터에는 없는 raw text 를 넣어보자
-data = ['신나고 재미있는 뮤지컬 음악']
+data = ['공주병 말기인 주인공이 머리를 휘날리며 부를 것 같은 음악']
 show_emotion_with_text(data)
 
-data = ['신나고 재미있는 뮤지컬 음악']
+data = ['드라마 주인공이 복수하러 갈 때 나올 것 같은 노래']
 show_emotion_with_text(data)
 
-data = ['신나고 재미있는 뮤지컬 음악']
+data = ['부모님이 나에게 주신 사랑을 보답하고 싶어']
 show_emotion_with_text(data)
-
