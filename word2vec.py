@@ -134,3 +134,12 @@ show_emotion_with_text(data)
 
 data = ['부모님이 나에게 주신 사랑을 보답하고 싶어']
 show_emotion_with_text(data)
+
+data = ['친구들과 같이 놀러갔는데 마음에 드는 남자를 발견했을 때']
+show_emotion_with_text(data)
+
+data = ['자신감 넘치고 당당한 음악']
+show_emotion_with_text(data)
+
+data = ['들으면 뭐든지 잘할 수 있을 것 같은 노래']
+show_emotion_with_text(data)
