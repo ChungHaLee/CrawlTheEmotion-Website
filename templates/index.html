@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width" initial-scale=1.0">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
     <title>Emotional WordCloud</title>
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/style/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
@@ -12,13 +12,21 @@
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
     <h1>Crawl the Emotion from the Music</h1> <!--링크를 입력하면 나오는 음악 제목-->
     <br> <br>
-    <form id="put-link-form" method="GET">
-        <input type = "text" required name = "link" id = "music-link" placeholder = "Put the Music Link in Here">
+
+    <form id="put-link-form" method="POST">
+        <input type = "text" name = "link" id = "music-link" placeholder = "Put the Music Link in Here">
     </form>
+
     <br>
-    <input type = "button" onClick="location.href='show_wordcloud.html'" id='click-and-show' value = "See the Wordcloud">
+
+    <input type = "button" onClick="location.href='/wordcloud'" id='click-and-show' value="See the Wordcloud">
+    
+    <div>
+        <p> {{ link }} </p>
+    </div>
+
     <video muted autoplay loop>
-        <source src="../static/video/Savage-2.mp4" type="video/mp4">
+        <source src="../static/video/background.mp4" type="video/mp4">
     </video>
 </body>
 </html>

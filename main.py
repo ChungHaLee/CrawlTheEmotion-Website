@@ -9,6 +9,10 @@ from selenium import webdriver as wd
 from bs4 import BeautifulSoup
 import re
 
+chrome_options = wd.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
@@ -23,7 +27,7 @@ driver = wd.Chrome(executable_path='/Users/lifeofpy/Desktop/chromedriver')
 
 
 # 불용어 사전 불러오기
-with open('/Users/lifeofpy/opt/anaconda3/envs/Crawling/Melon/stop_words.txt', 'r') as file:
+with open('/Users/lifeofpy/Documents/WebProject/stopwords.txt', 'r') as file:
     stop_word = file.readline()
     stop_word = str(stop_word)
     
@@ -163,7 +167,6 @@ def extract_emo_words(url):
 
 
 # 감정단어 기반의 리스트로 워드클라우드를 만드는 함수
-
 def make_wordcloud(words):
     wordcloud = WordCloud(font_path='./Fonts/AppleSDGothicNeo.ttc', background_color='white').generate(words)
     return wordcloud
@@ -174,7 +177,7 @@ def show_wordcloud(emo_words):
     plt.figure(figsize=(20, 20))  # 이미지 사이즈 지정
     plt.imshow(wordcloud, interpolation='lanczos')  # 이미지의 부드럽기 정도
     plt.axis('off')  # x, y 축 숫자 제거
-    image = plt.savefig('/Users/lifeofpy/opt/anaconda3/envs/Crawling/WebProject/static/img/wordcloud.png')
+    image = plt.savefig('/Users/lifeofpy/Documents/WebProject/CrawlTheEmotion-Website/static/img')
     return image
 
 
